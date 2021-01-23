@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<br>
+<!--Css dropzone-->>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
+<div id="rectangle" class="alarm-square" style="background-color: #fff;">
+    <div class="col">
+        <h1 class="text-center"><b>Web Image Process</b></h1>
+        <h2 class="text-center"><b>Examples of methods for image processing</b></h2>
+    </div>
+    <br>
+
+    <div class="d-flex justify-content-center" style="max-width: 100%;">
+        <div id="container-img">
+            <img src= {{filename}} alt="" />
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    (function() {
+    var img = document.getElementById('container-img').firstChild;
+    img.onload = function() {
+        if(img.height > img.width) {
+            img.height = '100%';
+            img.width = 'auto';
+        }
+    };
+    }());
+
+    
+</script>
+
+{% endblock %}

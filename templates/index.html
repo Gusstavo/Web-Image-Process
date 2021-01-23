@@ -1,13 +1,31 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Web Image Process</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
-    </head>
-    <body>
-        <h1>Choose an image</h1>
-        <form action="{{ url_for('upload_files') }}" class="dropzone">
-        </form>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"></script>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<br>
+<div id="rectangle" class="alarm-square" style="background-color: #fff;">
+    <div class="col">
+        <h1 class="text-center"><b>Web Image Process</b></h1>
+        <h2 class="text-center"><b>Examples of methods for image processing</b></h2>
+    </div>
+    <br>
+    <div class="profile-tab text-center">
+        <div class="text-left" aria-labelledby="home-tab">
+            <div class="col">
+                <div class="col-md-6">
+                    <h2><label>Choose an image</label></h2>
+                </div>
+                <div class="col-md-12">
+                    <div class="upload" style="font-weight:normal;font-size:18px;">
+                        <form method="POST" action="{{ url_for('main.upload_files') }}" enctype="multipart/form-data">
+                            <p><input type="file" name="file"></p>
+                            <p><input type="submit" value="Submit"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
